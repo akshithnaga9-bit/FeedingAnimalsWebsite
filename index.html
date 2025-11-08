@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feeding Moments — by Naga Akshith</title>
+  <meta name="description" content="Feeding stray dogs & cows. Join Naga Akshith in helping animals on our streets. Donate via UPI QR or phone." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --card:#121726;
+      --soft:#1b2135;
+      --brand:#22c55e;   /* emerald */
+      --brand-2:#06b6d4; /* cyan */
+      --text:#e5e7eb;
+      --muted:#a7b0c0;
+      --ring: 0 0 0 8px rgba(6,182,212,.15);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius:24px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;scroll-behavior:smooth;background:radial-gradient(1200px 800px at 10% -20%, #0f172a 0%, #0b0f19 45%), var(--bg); color:var(--text); font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* NAV */
+    .nav{
+      position:sticky; top:0; z-index:30;
+      backdrop-filter:saturate(180%) blur(10px);
+      background:rgba(11,15,25,.6);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav .wrap{max-width:1100px;margin:auto;display:flex;align-items:center;gap:16px;padding:14px 18px}
+    .brand{font-weight:800;letter-spacing:.4px;background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-size:18px}
+    .links{margin-left:auto;display:flex;gap:18px;font-weight:600}
+    .btn{
+      background:linear-gradient(90deg,var(--brand),var(--brand-2));
+      color:#041016;border:0;padding:10px 16px;border-radius:999px;font-weight:700;cursor:pointer;transition:.2s transform, .2s filter;
+    }
+    .btn:hover{transform:translateY(-1px);filter:brightness(1.05)}
+    .ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.12)}
+
+    /* HERO */
+    .section{max-width:1100px;margin:auto;padding:56px 20px}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    .tag{display:inline-flex;gap:8px;align-items:center;background:rgba(34,197,94,.12);color:#bbf7d0;padding:6px 12px;border-radius:999px;font-weight:700;font-size:12px;border:1px solid rgba(34,197,94,.35)}
+    .title{font-size:40px;line-height:1.1;margin:14px 0 10px;font-weight:800}
+    .lead{color:var(--muted);font-size:16px}
+    .cta{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .card{
+      background:linear-gradient(180deg,var(--card),#0e1322);
+      border:1px solid rgba(255,255,255,.06);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .card.pad{padding:18px}
+    .photo{
+      border-radius:20px;border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 16px 40px rgba(0,0,0,.45);
+    }
+
+    /* STATS */
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+    .stat{padding:16px;border-radius:16px;background:var(--soft);border:1px solid rgba(255,255,255,.06);text-align:center}
+    .stat b{font-size:22px}
+
+    /* GALLERY */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .gallery img{border-radius:16px;height:240px;object-fit:cover;border:1px solid rgba(255,255,255,.07)}
+
+    /* DONATE */
+    .donate{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+    .qr{background:var(--soft); padding:16px;border-radius:20px;border:1px solid rgba(255,255,255,.08)}
+    .row{display:flex;gap:10px;align-items:center;margin-top:10px;color:var(--muted)}
+    .chip{background:rgba(6,182,212,.15);color:#a5f3fc;border:1px solid rgba(6,182,212,.35);padding:6px 10px;border-radius:999px;font-size:12px}
+
+    /* FOOTER */
+    footer{padding:36px 18px;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,.06);margin-top:40px}
+
+    /* MOBILE */
+    @media (max-width:960px){ .hero{grid-template-columns:1fr} .donate{grid-template-columns:1fr} .gallery{grid-template-columns:1fr 1fr} .stats{grid-template-columns:1fr 1fr 1fr} }
+    @media (max-width:640px){ .title{font-size:30px} .gallery{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap">
+      <div class="brand">Feeding Moments</div>
+      <nav class="links">
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#donate" class="btn">Donate</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="section hero" id="top">
+    <div>
+      <span class="tag">Kindness for Strays • Dogs & Cows</span>
+      <h1 class="title">Together, let’s feed roadside animals in our city</h1>
+      <p class="lead">
+        Hi, I’m <b>Naga Akshith</b>. I spend evenings feeding stray dogs and cows.
+        Your small support helps me buy biscuits, grains, and water every day.
+      </p>
+      <div class="cta">
+        <a href="#donate" class="btn">Donate Now</a>
+        <a href="#about" class="btn ghost">Learn More</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>10+ areas</b><div class="muted">visited weekly</div></div>
+        <div class="stat"><b>1000+ meals</b><div class="muted">served so far</div></div>
+        <div class="stat"><b>₹50 = 1 meal</b><div class="muted">avg. cost</div></div>
+      </div>
+    </div>
+
+    <div class="card pad">
+      <!-- Your photo (put my-photo.jpg next to index.html) -->
+      <img class="photo" src="my-photo.jpg" alt="Naga Akshith portrait" loading="eager" />
+      <div class="row" style="justify-content:center;margin-top:12px;">
+        <span class="chip">Created by Naga Akshith</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section card pad" id="about">
+    <h2 style="margin:0 0 10px">What we do</h2>
+    <p class="lead" style="margin:0">
+      We carry clean water and simple food (biscuits/roti/grains) for
+      <b>street dogs and cows</b>, focusing on places where they gather near
+      bus stands, markets, and colony gates. We also guide locals on
+      <em>kind feeding spots</em> to avoid traffic issues.
+    </p>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <h2 style="margin:0 0 14px">Feeding Moments</h2>
+    <div class="gallery">
+      <!-- Royalty-free images via Unsplash (no login needed) -->
+      <img src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&w=1200&auto=format&fit=crop" alt="Street dog being fed" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1553231950-39c3d4a7d3ff?q=80&w=1200&auto=format&fit=crop" alt="Cow being cared for" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=1200&auto=format&fit=crop" alt="Puppy with kind hands" loading="lazy">
+    </div>
+  </section>
+
+  <!-- DONATE -->
+  <section class="section card pad" id="donate">
+    <h2 style="margin:0 0 6px;">Donate & Support</h2>
+    <p class="lead" style="margin:0 0 14px;">
+      No pressure—give only if you wish. Every rupee becomes food and water.
+    </p>
+
+    <div class="donate">
+      <div class="qr">
+        <!-- Your QR (put qr.jpg next to index.html) -->
+        <img src="qr.jpg" alt="UPI QR for Naga Akshith" />
+      </div>
+
+      <div>
+        <div class="row"><b>UPI:</b> <span class="chip">akshithnaga9@okhdfcbank</span></div>
+        <div class="row"><b>Phone (donations / WhatsApp):</b> <span class="chip">8074402532</span></div>
+        <div class="cta" style="margin-top:16px">
+          <a class="btn" href="upi://pay?pn=Naga%20Akshith&pa=akshithnaga9@okhdfcbank&cu=INR" target="_blank" rel="noopener">Pay via UPI</a>
+          <a class="btn ghost" href="https://wa.me/918074402532" target="_blank" rel="noopener">Message on WhatsApp</a>
+        </div>
+        <p class="lead" style="margin-top:14px;color:var(--muted)">
+          Transparency: I share short clips/photos on request so you can see the meals your contribution created.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © <span id="y"></span> Naga Akshith — Feeding Stray Animals • With love for dogs & cows
+  </footer>
+
+  <script>
+    // current year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
